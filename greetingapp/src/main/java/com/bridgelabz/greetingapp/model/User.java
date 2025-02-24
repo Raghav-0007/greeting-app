@@ -8,6 +8,15 @@ public class User {
     private String firstName;
     private String lastName;
     private String message;
+    private String userId;
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)  // Auto-generated ID

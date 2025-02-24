@@ -26,4 +26,9 @@ public class GreetingController {
         greetService.saveUser(user);
         return user.getMessage();
     }
+
+    @GetMapping("/get/{id}")
+    public String getById(@PathVariable String id){
+        return greetService.getMessage(id);
+    }
 }

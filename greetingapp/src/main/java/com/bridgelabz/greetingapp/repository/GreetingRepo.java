@@ -9,4 +9,5 @@ import java.rmi.server.ObjID;
 
 @Repository
 public interface GreetingRepo extends JpaRepository<User, Long> {
+    User findByUserId(String name);
 }
