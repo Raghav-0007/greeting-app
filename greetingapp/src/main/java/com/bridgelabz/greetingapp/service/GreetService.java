@@ -32,4 +32,11 @@ public class GreetService {
     public List<String> getList(){
         return repo.findAllUserMessages();
     }
+
+    public void updateMessage(String id){
+        User user=repo.findByUserId(id);
+        String message=user.getMessage()+" from BridgeLabze";
+        user.setMessage(message);
+        repo.flush();
+    }
 }

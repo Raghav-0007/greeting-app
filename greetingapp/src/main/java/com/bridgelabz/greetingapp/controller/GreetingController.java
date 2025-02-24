@@ -38,4 +38,10 @@ public class GreetingController {
     public List<String> getList(){
         return greetService.getList();
     }
+
+    @PatchMapping("/edit/{id}")
+    public boolean updateMessage(@PathVariable String id){
+        greetService.updateMessage(id);
+        return true;
+    }
 }
