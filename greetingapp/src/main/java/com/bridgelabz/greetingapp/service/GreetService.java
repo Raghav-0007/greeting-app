@@ -39,4 +39,10 @@ public class GreetService {
         user.setMessage(message);
         repo.flush();
     }
+
+    public void deleteMessage(String id){
+        User user=repo.findByUserId(id);
+        user.setMessage("");
+        repo.flush();
+    }
 }
