@@ -1,9 +1,18 @@
 package com.bridgelabz.greetingapp.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "users")  // Optional, to specify table name
 public class User {
     private String firstName;
     private String lastName;
     private String message;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  // Auto-generated ID
+    private Long id;
+
 
     public String getMessage() {
         return message;

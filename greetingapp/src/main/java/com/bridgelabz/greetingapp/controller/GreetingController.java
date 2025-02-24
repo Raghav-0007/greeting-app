@@ -23,6 +23,7 @@ public class GreetingController {
     public String sayHelloWithName(@RequestBody User user){
         String message= "Hello "+user.getFirstName()+" "+ user.getLastName();
         user.setMessage(message);
+        greetService.saveUser(user);
         return user.getMessage();
     }
 }
