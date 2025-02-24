@@ -7,6 +7,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Component
 public class GreetService {
 
@@ -24,5 +27,9 @@ public class GreetService {
 
     public String  getMessage(String id){
         return repo.findByUserId(id).getMessage();
+    }
+
+    public List<String> getList(){
+        return repo.findAllUserMessages();
     }
 }
